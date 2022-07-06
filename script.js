@@ -24,5 +24,18 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 
 //Here I add the function we created to the eventlistener of the button and the overlay to close the modal by executing the function.
 btnCloseModal.addEventListener('click', closeModal);
-
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', e => {
+  console.log(e.key);
+
+  if (e.key === 'Escape') {
+    if (
+      !modal.classList.contains('hidden') &&
+      !overlay.classList.contains('hidden')
+    ) {
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }
+  }
+});
