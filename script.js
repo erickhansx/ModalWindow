@@ -13,7 +13,7 @@ const closeModal = () => {
 // Function to add the event listener to the buttons and to display the modals by removing the hidden class.
 
 const openModal = () => {
-  console.log('Button clicked');
+  // console.log('Button clicked');
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
@@ -29,13 +29,7 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   console.log(e.key);
 
-  if (e.key === 'Escape') {
-    if (
-      !modal.classList.contains('hidden') &&
-      !overlay.classList.contains('hidden')
-    ) {
-      modal.classList.add('hidden');
-      overlay.classList.add('hidden');
-    }
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
   }
 });
